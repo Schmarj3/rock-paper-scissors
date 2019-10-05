@@ -1,0 +1,92 @@
+/* FONTS
+
+font-family: 'Permanent Marker', cursive;
+font-family: 'Monoton', cursive;!
+font-family: 'Bungee Inline', cursive;
+font-family: 'Megrim', cursive;
+font-family: 'Codystar', cursive;
+font-family: 'Nosifer', cursive;
+*/
+
+/* COLOR PALETTE 2
+
+$color1: rgba(110, 37, 148, 1);
+$color2: rgba(236, 212, 68, 1);
+$color3: rgba(128, 128, 128, 1);
+$color4: rgba(0, 0, 0, 1);
+$color5: rgba(255, 255, 255, 1);
+*/
+:root{
+    --coal: rgba(75, 74, 74, 1);
+    --purple: rgba(121, 107, 232, 1);
+    --lime-green: rgba(201, 255, 5, 1);
+    --red-orange: rgba(248, 71, 114, 1);
+    --bright-turquois: rgba(0, 211, 209, 1);
+}
+html, body{
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--coal);
+    font-family: 'Monoton', cursive;
+}
+*{
+    /* border: solid black 1px; */
+    margin: 0px;
+}
+img{
+    margin: 20px 10px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 5px 5px var(--coal);
+}
+@media screen and (min-height: 600px){
+    img{
+        height: 95px;
+    }
+}
+@media screen and (min-height: 740px){
+    img{
+        margin: 20px 15px;
+        height: 105px;
+    }
+}
+@media screen and (min-height: 1000px){
+    body{
+        font-size: 1.5rem;
+    }
+    img{
+        height: 200px;
+        box-shadow: 15px 15px var(--coal);
+    }
+}
+#player-score{
+    height: 15vh;
+    text-align: center;
+    background-color: var(--purple);
+    color: var(--lime-green);
+}
+#player{
+    height: 35vh;
+    text-align: center;
+    background-color: var(--purple);
+}
+#computer{
+    height: 35vh;
+    text-align: center;
+    background-color: var(--bright-turquois);
+}
+#computer-score{
+    height: 20vh;
+    text-align: center;
+    background-color: var(--bright-turquois);
+    color: var(--red-orange);
+}
+#display-player-score, #display-computer-score{
+    display: block;
+}
+@media screen and (orientation: landscape){
+    #display-player-score, #display-computer-score{
+        display: inline;
+    }
+}

@@ -1,5 +1,5 @@
 function playerChoice() {
-    let answer = prompt('Type : Rock, Paper, or Scissors').toLowerCase()
+    // let answer = prompt('Type : Rock, Paper, or Scissors').toLowerCase()
     if (answer === 'rock' || answer === 'paper' || answer === 'scissors'){
         return answer
     } else {
@@ -49,7 +49,7 @@ function game(numOfRounds) {
     let computerScore = 0
 
     if (playerChoice().includes('Invalid')) {
-        alert(playerChoice())
+        // alert(playerChoice())
         return playerChoice
     } else {
         for (let i = 1; i <= numOfRounds; i++){
