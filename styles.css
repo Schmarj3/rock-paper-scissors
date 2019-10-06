@@ -166,8 +166,8 @@ html, body{
     }
 }
 
-/* TIE */
-#tie{
+/* POP UPS */
+#tie, #game-over{
     height: 100vh;
     width: 100vw;
     z-index: 1;
@@ -177,7 +177,7 @@ html, body{
     transform: translate(-50%, -50%);
     background-color: transparent; 
 }
-#tie img{
+#tie img, #game-over img, #game-over-content{
     width: 100%;
     margin: 0;
     position: absolute;
@@ -190,6 +190,12 @@ html, body{
     #tie img{
         height: 100vh;
     }
+}
+#game-over-content{
+    text-align: center;
+    width: 100%;
+    font-size: 2.5em;
+    color: var(--red-orange);
 }
 
 /* Click & Hover Action */

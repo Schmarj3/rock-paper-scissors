@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Codystar|Megrim|Monoton|Nosifer|Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/favicon.png">
-    <script src="functions.js"></script>
+    <script src="player-inputs.js"></script>
 
     <title>Rock Paper Scissors</title>
 </head>
@@ -41,7 +41,13 @@
         <h1 class="bottom">Computer: <span id="display-computer-score">0</span></h1>
     </div>
     <div id="pop-ups">
-        <div id="game-over"></div>
+        <div id="game-over" class="hide">
+            <img src="images/game-over.svg" alt="">
+            <div id="game-over-content">
+                <h1>Game</h1>
+                <h1>Over</h1>
+            </div>
+        </div>
         <div id="results"></div>
         <div id="tie" class="hide">
             <img src="images/tie.svg" alt="Tie Image">

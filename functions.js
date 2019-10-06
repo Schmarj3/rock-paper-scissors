@@ -1,35 +1,42 @@
-let playerChoice = function() {
-    let playerChoice = ''
-    if(this == playerClickedRock){
-        playerChoice = 'rock'
-        round++
-    } else if (this == playerClickedPaper){
-        playerChoice = 'paper'
-        round++
-    } else if (this == playerClickedScissors){
-        playerChoice = 'scissors'
-        round++
-    }
-    startRound(5 ,playerChoice)
-    displayScores()
-}
+// Refactoring...
+// let playerChoice = function() {
+//     let playerChoice = ''
+//     if(this == playerClickedRock){
+//         playerChoice = 'rock'
+//         while(round <= totalRounds){
+//             round++
+//         }
+//     } else if (this == playerClickedPaper){
+//         playerChoice = 'paper'
+//         while(round <= totalRounds){
+//             round++
+//         }
+//     } else if (this == playerClickedScissors){
+//         playerChoice = 'scissors'
+//         while(round <= totalRounds){
+//             round++
+//         }
+//     }
+//     startRound(setTotalRounds, playerChoice)
+//     displayScores()
+// }
 
-let computerChoice = function() {
-    let randomNum = Math.floor(Math.random()*3)
-    let computerChoice = ''
-    switch (randomNum) {
-        case 0:
-            computerChoice = 'rock'
-            break;
-        case 1:
-            computerChoice = 'paper'
-            break;
-        case 2:
-            computerChoice = 'scissors'
-            break;
-    }
-    return computerChoice
-}
+// let computerChoice = function() {
+//     let randomNum = Math.floor(Math.random()*3)
+//     let computerChoice = ''
+//     switch (randomNum) {
+//         case 0:
+//             computerChoice = 'rock'
+//             break;
+//         case 1:
+//             computerChoice = 'paper'
+//             break;
+//         case 2:
+//             computerChoice = 'scissors'
+//             break;
+//     }
+//     return computerChoice
+// }
 
 let playRound = function(playerSelection, computerSelection) {
     let tie = `It's a tie`
@@ -50,7 +57,7 @@ let playRound = function(playerSelection, computerSelection) {
     }
 }
 
-function startRound(totalRounds, playerChoice) {
+function startRound(setTotalRounds, playerChoice) {
     let results = ''
     const playerSelection = playerChoice
     const computerSelection = computerChoice()
@@ -72,7 +79,7 @@ function startRound(totalRounds, playerChoice) {
 
 let displayResults = function(results){
     if (results == `It's a tie`){
-        popUp(tiePopUp)
+        showPopUp(tiePopUp)
         console.log(`Round ${round} out of ${totalRounds}: ${results}! Your Score : ${playerScore}. Computer Score : ${computerScore}.`)
     } else {
         console.log(`Round ${round} out of ${totalRounds}: ${results}! Your Score : ${playerScore}. Computer Score : ${computerScore}.`)
@@ -97,22 +104,42 @@ let startOver = function(){
     }
 }
 
-let popUp = function(popup){
+let showPopUp = function(popup){
     let thisPopUp = document.getElementById(popup)
         thisPopUp.classList.remove('hide')
-
     setTimeout(()=>{
         thisPopUp.classList.add('hide')
     }, 1500)
 }
+
+let showGameOver = function(){
+    showPopUp(gameOverContent)
+}
+
 // function tieBreaker(){
 
 // }
+let getLevel = function(){
 
-// function gameLevel(){
-    // 1 - 5
-    // 2 - 4
-    // 3 - 3
-    // 4 - 2
-    // 5 - 1
-// }
+}
+
+let setTotalRounds = function(level = 1){
+    switch (level) {
+        case 1:
+            totalRounds = 5
+            break;
+        case 2:
+            totalRounds = 4
+            break;
+        case 3:
+            totalRounds = 3
+            break;
+        case 4:
+            totalRounds = 2
+            break;
+        case 5:
+            totalRounds = 1
+            break;
+    }
+    return totalRounds
+}
