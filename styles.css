@@ -65,6 +65,8 @@ html, body{
     background-color: var(--purple);
 }
 #start-over{
+    margin-top: 10px;
+    margin-left: 10px;
     padding: 5px;
     border: none;
     border-radius: 50px;
