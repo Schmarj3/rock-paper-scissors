@@ -18,8 +18,14 @@ let round = 0,
     computerScore = 0,
     totalRounds = 5
 
-let playScore = document.getElementById('display-player-score')
-let compScore = document.getElementById('display-computer-score')
+let playerScoreDisplay = document.getElementById('display-player-score')
+let computerScoreDisplay = document.getElementById('display-computer-score')
+
+// Level Counters
+let levelDisplay = document.getElementById('level')
+let roundDisplay = document.getElementById('round')
+
+
 
 // Pop Ups
 let tiePopUp = 'tie'

@@ -80,8 +80,10 @@ let displayResults = function(results){
 }
 
 let displayScores = function (){
-    playScore.innerHTML = playerScore
-    compScore.innerHTML = computerScore
+    playerScoreDisplay.innerHTML = playerScore
+    computerScoreDisplay.innerHTML = computerScore
+    levelDisplay.innerHTML = 1
+    roundDisplay.innerHTML = round
 }
 
 let startOver = function(){
