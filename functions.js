@@ -68,6 +68,22 @@ let displayScores = function (){
     compScore.innerHTML = computerScore
 }
 
+let startOver = function(){
+    let startOverConfirmation = confirm('Are You Sure You Want To Start Over?')
+    if(startOverConfirmation){
+        round = 0
+        playerScore = 0
+        computerScore = 0
+        totalRounds = 5
+        displayScores()
+    } else {
+        round = round
+        playerScore = playerScore
+        computerScore = computerScore
+        totalRounds = totalRounds
+    } 
+}
+
 
 // function tieBreaker(){
 
