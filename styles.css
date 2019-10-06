@@ -22,6 +22,8 @@ html, body{
     background-color: var(--coal);
     font-family: 'Monoton', cursive;
 }
+
+/* BUTTONS */
 #player img, #computer img{
     margin: 20px 10px;
     height: 80px;
@@ -70,14 +72,22 @@ html, body{
     color: black;
     font-family: 'Monoton', cursive;
     font-size: 0.6rem; 
+    float: left;
 }
-@media screen and (min-width: 100px){
+#player-score h1{
+    display: inline-block;
+    margin-left: -76px;
+}
+@media screen and (min-width: 1000px){
     #start-over{
         padding: 10px;
         font-size: 1.5rem; 
     }
+    #player-score h1{
+        display: inline-block;
+        margin-left: -176px;
+    }
 }
-
 
 /* PLAYER & COMPUTER */
 #player-score{
@@ -132,12 +142,18 @@ html, body{
     background-color: transparent; 
 }
 #tie img{
+    width: 100%;
     margin: 0;
     position: absolute;
     z-index: 9999;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+@media screen and (orientation: landscape){
+    #tie img{
+        height: 100vh;
+    }
 }
 
 /* Click & Hover Action */

@@ -73,6 +73,7 @@ function startRound(totalRounds, playerChoice) {
 let displayResults = function(results){
     if (results == `It's a tie`){
         popUp(tiePopUp)
+        console.log(`Round ${round} out of ${totalRounds}: ${results}! Your Score : ${playerScore}. Computer Score : ${computerScore}.`)
     } else {
         console.log(`Round ${round} out of ${totalRounds}: ${results}! Your Score : ${playerScore}. Computer Score : ${computerScore}.`)
     }
