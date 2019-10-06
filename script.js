@@ -6,14 +6,20 @@ playerClickedRock.addEventListener('click', playerChoice)
 playerClickedPaper.addEventListener('click', playerChoice)
 playerClickedScissors.addEventListener('click', playerChoice)
 
-// Reset Button
-let reset = document.querySelector('#start-over')
-reset.addEventListener('click', startOver)
+// Reset Buttons
+let resetScore = document.querySelector('#start-over')
+resetScore.addEventListener('click', startOver)
+
+
 
 // Score Counters
 let round = 0,
     playerScore = 0,
     computerScore = 0,
     totalRounds = 5
+
 let playScore = document.getElementById('display-player-score')
 let compScore = document.getElementById('display-computer-score')
+
+// Pop Ups
+let tiePopUp = 'tie'

@@ -50,17 +50,32 @@ let playRound = function(playerSelection, computerSelection) {
     }
 }
 
-
 function startRound(totalRounds, playerChoice) {
     let results = ''
     const playerSelection = playerChoice
     const computerSelection = computerChoice()
 
     results = playRound(playerSelection, computerSelection)
-    results.includes('Win')? playerScore += 1
-        : results.includes('Lose')? computerScore += 1
-        :''
-    console.log(`Round ${round} out of ${totalRounds}: ${results}! Your Score : ${playerScore}. Computer Score : ${computerScore}.`)
+    // results.includes('Win')? playerScore += 1
+    //     : results.includes('Lose')? computerScore += 1
+    //     :''
+    if (results.includes('Win')){
+        playerScore += 1
+    } else if (results.includes('Lose')){
+        computerScore += 1
+    }else if (results.includes('Tie')){
+        playerScore = playerScore
+        computerScore = computerScore
+    }
+    displayResults(results)
+}
+
+let displayResults = function(results){
+    if (results == `It's a tie`){
+        popUp(tiePopUp)
+    } else {
+        console.log(`Round ${round} out of ${totalRounds}: ${results}! Your Score : ${playerScore}. Computer Score : ${computerScore}.`)
+    }
 }
 
 let displayScores = function (){
@@ -76,15 +91,17 @@ let startOver = function(){
         computerScore = 0
         totalRounds = 5
         displayScores()
-    } else {
-        round = round
-        playerScore = playerScore
-        computerScore = computerScore
-        totalRounds = totalRounds
-    } 
+    }
 }
 
+let popUp = function(popup){
+    let thisPopUp = document.getElementById(popup)
+        thisPopUp.classList.remove('hide')
 
+    setTimeout(()=>{
+        thisPopUp.classList.add('hide')
+    }, 1500)
+}
 // function tieBreaker(){
 
 // }

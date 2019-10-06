@@ -1,5 +1,4 @@
 /* FONTS
-
 font-family: 'Permanent Marker', cursive;
 font-family: 'Monoton', cursive;!
 font-family: 'Bungee Inline', cursive;
@@ -8,14 +7,6 @@ font-family: 'Codystar', cursive;
 font-family: 'Nosifer', cursive;
 */
 
-/* COLOR PALETTE 2
-
-$color1: rgba(110, 37, 148, 1);
-$color2: rgba(236, 212, 68, 1);
-$color3: rgba(128, 128, 128, 1);
-$color4: rgba(0, 0, 0, 1);
-$color5: rgba(255, 255, 255, 1);
-*/
 :root{
     --coal: rgba(75, 74, 74, 1);
     --purple: rgba(121, 107, 232, 1);
@@ -31,7 +22,7 @@ html, body{
     background-color: var(--coal);
     font-family: 'Monoton', cursive;
 }
-img{
+#player img, #computer img{
     margin: 20px 10px;
     height: 80px;
     display: inline-block;
@@ -40,12 +31,12 @@ img{
     transition: transform 0.2s;
 }
 @media screen and (min-height: 600px){
-    img{
+    #player img, #computer img{
         height: 95px;
     }
 }
 @media screen and (min-height: 740px){
-    img{
+    #player img, #computer img{
         margin: 20px 15px;
         height: 105px;
     }
@@ -54,13 +45,13 @@ img{
     body{
         font-size: 1.5rem;
     }
-    img{
+    #player img, #computer img{
         height: 200px;
         box-shadow: 2px 15px var(--coal);
     }
 }
 @media screen and (min-width: 1000px){
-    img{
+    #player img, #computer img{
         margin: 20px 30px;
         height: 200px;
         box-shadow: 2px 20px var(--coal);
@@ -129,9 +120,27 @@ img{
     }
 }
 
+/* Tie */
+#tie{
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent; 
+}
+#tie img{
+    margin: 0;
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /* Click & Hover Action */
-
 #player img:hover, .win{
     transform: scale(1.2);
 }
@@ -155,4 +164,10 @@ img{
     80% { transform: translate(-1px, -1px) rotate(1deg) }
     90% { transform: translate(1px, 2px) rotate(0deg)  }
     100% { transform: translate(1px, -2px) rotate(-1deg) }
+  }
+
+  /* Hidden */
+
+  .hide{
+      display: none;
   }
